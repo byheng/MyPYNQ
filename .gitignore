@@ -1,0 +1,5 @@
+# Ignore all files with .bsp extension
+*.bsp
+
+# Ignore all files in any prebuild directory
+prebuild/

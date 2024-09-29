@@ -1,0 +1,24 @@
+/include/ "system-conf.dtsi"
+/ { /*根节点，这里保持不变*/
+};
+
+
+&sdhci0 {
+	status = "okay";
+	max-frequency = <50000000>;
+	no-1-8-v; /* for 1.0 silicon */
+	disable-wp;
+};
+
+&i2c0 {
+	i2c@ff020000 {
+		compatible = "cdns,i2c-r1p14";
+		status = "okay";
+		/*interrupt-parent = <&gic>;*/
+		/*interrupts = <0 17 4>;*/
+		reg = <0x0 0xff020000 0x0 0x1000>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		/*power-domains = <&zynqmp_firmware PD_I2C_0>;*/
+		};
+};
